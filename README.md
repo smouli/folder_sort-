@@ -57,13 +57,27 @@ Classify pre-extracted text.
 
 1. **Install dependencies**:
 ```bash
+# For production (API only)
 pip install -r requirements.txt
+
+# For development (includes testing and evaluation tools)
+pip install -r requirements-dev.txt
 ```
 
-2. **Configure environment variables** in your `config.py`:
-```python
-OPENAI_API_KEY = "your_openai_api_key"
-LLAMAPARSE_API_KEY = "your_llamaparse_api_key"
+2. **Configure environment variables** by creating a `.env` file:
+```bash
+# Create .env file in project root
+cat > .env << EOF
+OPENAI_API_KEY=your_openai_api_key_here
+LLAMAPARSE_API_KEY=your_llamaparse_api_key_here
+USER_ID=your_user_id
+EOF
+```
+
+Or set them as environment variables:
+```bash
+export OPENAI_API_KEY="your_openai_api_key"
+export LLAMAPARSE_API_KEY="your_llamaparse_api_key"
 ```
 
 3. **Run the API**:
