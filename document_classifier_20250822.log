@@ -1,0 +1,22 @@
+2025-08-25 11:49:01,431 - document_classifier - INFO - Processing and classifying file: Mobile Combustion - Distance.pdf
+2025-08-25 11:49:01,434 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 11:49:03,741 - httpx - INFO - HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
+2025-08-25 11:49:04,951 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:07,147 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:10,427 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:14,635 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:20,271 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:25,716 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:31,271 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:36,738 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:42,169 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:47,706 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:53,506 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383 "HTTP/1.1 200 OK"
+2025-08-25 11:49:54,158 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/8e0f281e-418d-4ce5-a040-8e782bc48383/result/text "HTTP/1.1 200 OK"
+2025-08-25 11:49:54,240 - document_classifier - INFO - Starting document classification...
+2025-08-25 11:49:54,256 - document_classifier - INFO - Before LLM call: 2025-08-25 11:49:54.256272
+2025-08-25 11:49:55,499 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 11:49:55,513 - document_classifier - INFO - After LLM call: 2025-08-25 11:49:55.513768
+2025-08-25 11:49:55,514 - document_classifier - INFO - Classification result: Compliance / Risk
+2025-08-25 11:49:57,643 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 11:49:57,663 - document_classifier - ERROR - Error processing file Mobile Combustion - Distance.pdf: 'Other'

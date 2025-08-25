@@ -1,0 +1,185 @@
+2025-08-25 11:54:39,338 - document_classifier - INFO - Processing and classifying file: Mobile Combustion - Fuel Use.pdf
+2025-08-25 11:54:39,341 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 11:54:40,895 - httpx - INFO - HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
+2025-08-25 11:54:42,095 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:54:44,532 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:54:47,730 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:54:51,925 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:54:57,387 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:55:02,828 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:55:08,255 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:55:13,793 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:55:19,270 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:55:24,691 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c "HTTP/1.1 200 OK"
+2025-08-25 11:55:25,084 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/6ed613e3-dc49-4533-99ae-a72ee3d4e46c/result/text "HTTP/1.1 200 OK"
+2025-08-25 11:55:25,088 - document_classifier - INFO - Starting document classification...
+2025-08-25 11:55:25,106 - document_classifier - INFO - Before LLM call: 2025-08-25 11:55:25.106270
+2025-08-25 11:55:25,713 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 11:55:25,720 - document_classifier - INFO - After LLM call: 2025-08-25 11:55:25.720101
+2025-08-25 11:55:25,720 - document_classifier - INFO - Classification result: Compliance / Risk
+2025-08-25 11:55:27,137 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 11:55:27,141 - document_classifier - INFO - Extracting data for document type: Compliance / Risk
+2025-08-25 11:55:31,126 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 11:55:31,132 - document_classifier - INFO - Classification completed: Compliance / Risk
+2025-08-25 11:55:31,137 - document_classifier - ERROR - Error processing file Mobile Combustion - Fuel Use.pdf: Object of type datetime is not JSON serializable
+2025-08-25 12:14:51,575 - document_classifier - INFO - Processing and classifying file: Mobile Combustion - Fuel Use.pdf
+2025-08-25 12:14:51,578 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 12:14:54,530 - httpx - INFO - HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
+2025-08-25 12:14:55,722 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/e313ee94-3e28-4d70-994e-635d089a2ecf "HTTP/1.1 200 OK"
+2025-08-25 12:14:57,917 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/e313ee94-3e28-4d70-994e-635d089a2ecf "HTTP/1.1 200 OK"
+2025-08-25 12:14:58,309 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/e313ee94-3e28-4d70-994e-635d089a2ecf/result/text "HTTP/1.1 200 OK"
+2025-08-25 12:14:58,320 - document_classifier - INFO - Starting document classification...
+2025-08-25 12:14:58,337 - document_classifier - INFO - Before LLM call: 2025-08-25 12:14:58.337955
+2025-08-25 12:14:58,905 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 12:14:58,940 - document_classifier - INFO - After LLM call: 2025-08-25 12:14:58.940707
+2025-08-25 12:14:58,940 - document_classifier - INFO - Classification result: Compliance / Risk
+2025-08-25 12:15:00,999 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 12:15:01,006 - document_classifier - INFO - Extracting data for document type: Compliance / Risk
+2025-08-25 12:15:04,449 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 12:15:04,452 - document_classifier - INFO - Classification completed: Compliance / Risk
+2025-08-25 15:09:29,476 - document_classifier - INFO - Classifying text of length: 93
+2025-08-25 15:09:29,490 - document_classifier - INFO - Before LLM call: 2025-08-25 15:09:29.490084
+2025-08-25 15:09:30,492 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:09:30,497 - document_classifier - INFO - After LLM call: 2025-08-25 15:09:30.497570
+2025-08-25 15:09:30,497 - document_classifier - INFO - Classification result: Finance
+2025-08-25 15:09:31,789 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:09:31,790 - document_classifier - INFO - Extracting data for document type: Finance
+2025-08-25 15:09:35,794 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:09:52,196 - document_classifier - INFO - Classifying text of length: 93
+2025-08-25 15:09:52,203 - document_classifier - INFO - Before LLM call: 2025-08-25 15:09:52.203200
+2025-08-25 15:09:53,803 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:09:53,807 - document_classifier - INFO - After LLM call: 2025-08-25 15:09:53.807280
+2025-08-25 15:09:53,807 - document_classifier - INFO - Classification result: Finance
+2025-08-25 15:09:55,255 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:09:55,256 - document_classifier - INFO - Extracting data for document type: Finance
+2025-08-25 15:09:58,991 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:09:58,995 - document_classifier - INFO - Classifying text of length: 115
+2025-08-25 15:09:59,002 - document_classifier - INFO - Before LLM call: 2025-08-25 15:09:59.002707
+2025-08-25 15:09:59,560 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:09:59,562 - document_classifier - INFO - After LLM call: 2025-08-25 15:09:59.562618
+2025-08-25 15:09:59,562 - document_classifier - INFO - Classification result: Legal
+2025-08-25 15:10:00,534 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:00,535 - document_classifier - INFO - Extracting data for document type: Legal
+2025-08-25 15:10:04,441 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:04,445 - document_classifier - INFO - Classifying text of length: 96
+2025-08-25 15:10:04,456 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:04.456093
+2025-08-25 15:10:05,762 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:05,763 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:05.763379
+2025-08-25 15:10:05,763 - document_classifier - INFO - Classification result: HR
+2025-08-25 15:10:06,606 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:06,607 - document_classifier - INFO - Extracting data for document type: HR
+2025-08-25 15:10:10,183 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:10,192 - document_classifier - INFO - Classifying text of length: 84
+2025-08-25 15:10:10,204 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:10.204259
+2025-08-25 15:10:11,112 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:11,113 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:11.113778
+2025-08-25 15:10:11,113 - document_classifier - INFO - Classification result: Sales
+2025-08-25 15:10:12,032 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:12,033 - document_classifier - INFO - Extracting data for document type: Sales
+2025-08-25 15:10:13,365 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:13,370 - document_classifier - INFO - Classifying text of length: 59
+2025-08-25 15:10:13,380 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:13.380498
+2025-08-25 15:10:13,876 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:13,877 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:13.877818
+2025-08-25 15:10:13,877 - document_classifier - INFO - Classification result: Other
+2025-08-25 15:10:14,694 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:14,695 - document_classifier - INFO - Extracting data for document type: Other
+2025-08-25 15:10:17,351 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:17,355 - document_classifier - ERROR - Error classifying text: 
+2025-08-25 15:10:17,358 - document_classifier - ERROR - Error classifying text: 
+2025-08-25 15:10:17,360 - document_classifier - INFO - Classifying text of length: 7
+2025-08-25 15:10:17,375 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:17.375350
+2025-08-25 15:10:17,894 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:17,895 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:17.895851
+2025-08-25 15:10:17,895 - document_classifier - INFO - Classification result: Finance
+2025-08-25 15:10:18,756 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:18,757 - document_classifier - INFO - Extracting data for document type: Finance
+2025-08-25 15:10:21,200 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:21,210 - document_classifier - INFO - Classifying text of length: 13
+2025-08-25 15:10:21,221 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:21.221408
+2025-08-25 15:10:21,715 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:21,717 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:21.717311
+2025-08-25 15:10:21,717 - document_classifier - INFO - Classification result: Other
+2025-08-25 15:10:22,477 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:22,479 - document_classifier - INFO - Extracting data for document type: Other
+2025-08-25 15:10:24,272 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:24,285 - document_classifier - INFO - Classifying text of length: 20000
+2025-08-25 15:10:24,299 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:24.299031
+2025-08-25 15:10:24,990 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:24,996 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:24.996188
+2025-08-25 15:10:24,996 - document_classifier - INFO - Classification result: Legal
+2025-08-25 15:10:28,266 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:28,278 - document_classifier - INFO - Extracting data for document type: Legal
+2025-08-25 15:10:33,012 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:33,082 - document_classifier - INFO - Classifying text of length: 40
+2025-08-25 15:10:33,088 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:33.088532
+2025-08-25 15:10:33,458 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:33,461 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:33.461752
+2025-08-25 15:10:33,462 - document_classifier - INFO - Classification result: Legal
+2025-08-25 15:10:34,033 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:34,037 - document_classifier - INFO - Extracting data for document type: Legal
+2025-08-25 15:10:37,762 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:37,785 - document_classifier - INFO - Classifying text of length: 24
+2025-08-25 15:10:37,797 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:37.797242
+2025-08-25 15:10:38,350 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:38,351 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:38.351389
+2025-08-25 15:10:38,351 - document_classifier - INFO - Classification result: Other
+2025-08-25 15:10:38,931 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:38,941 - document_classifier - INFO - Extracting data for document type: Other
+2025-08-25 15:10:41,121 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:41,130 - document_classifier - INFO - Classifying text of length: 51
+2025-08-25 15:10:41,145 - document_classifier - INFO - Before LLM call: 2025-08-25 15:10:41.145070
+2025-08-25 15:10:41,725 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:41,727 - document_classifier - INFO - After LLM call: 2025-08-25 15:10:41.727841
+2025-08-25 15:10:41,728 - document_classifier - INFO - Classification result: Legal
+2025-08-25 15:10:42,135 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:10:42,141 - document_classifier - INFO - Extracting data for document type: Legal
+2025-08-25 15:10:45,909 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:37:57,959 - document_classifier - INFO - Processing and classifying file: Table of Contents.pdf (3510 bytes)
+2025-08-25 15:37:57,962 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 15:38:00,096 - httpx - INFO - HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
+2025-08-25 15:38:01,291 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/b85a774d-c25f-48a5-8466-7a715674c873 "HTTP/1.1 200 OK"
+2025-08-25 15:38:03,970 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/b85a774d-c25f-48a5-8466-7a715674c873 "HTTP/1.1 200 OK"
+2025-08-25 15:38:07,248 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/b85a774d-c25f-48a5-8466-7a715674c873 "HTTP/1.1 200 OK"
+2025-08-25 15:38:11,437 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/b85a774d-c25f-48a5-8466-7a715674c873 "HTTP/1.1 200 OK"
+2025-08-25 15:38:16,873 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/b85a774d-c25f-48a5-8466-7a715674c873 "HTTP/1.1 200 OK"
+2025-08-25 15:38:22,427 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/b85a774d-c25f-48a5-8466-7a715674c873 "HTTP/1.1 200 OK"
+2025-08-25 15:38:27,856 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/b85a774d-c25f-48a5-8466-7a715674c873 "HTTP/1.1 200 OK"
+2025-08-25 15:38:28,212 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/b85a774d-c25f-48a5-8466-7a715674c873/result/text "HTTP/1.1 200 OK"
+2025-08-25 15:38:28,218 - document_classifier - INFO - Starting document classification...
+2025-08-25 15:38:28,237 - document_classifier - INFO - Before LLM call: 2025-08-25 15:38:28.237455
+2025-08-25 15:38:29,345 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:38:29,361 - document_classifier - INFO - After LLM call: 2025-08-25 15:38:29.361147
+2025-08-25 15:38:29,361 - document_classifier - INFO - Classification result: Other
+2025-08-25 15:38:30,662 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:38:30,666 - document_classifier - INFO - Extracting data for document type: Other
+2025-08-25 15:38:35,347 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:38:35,352 - document_classifier - INFO - Classification completed successfully: Other
+2025-08-25 15:38:35,353 - document_classifier - INFO - Cleaned up temporary file: /var/folders/zy/qklbd2f11f94mkvyznxpss8r0000gn/T/tmp4qec7_x9.pdf
+2025-08-25 15:39:46,060 - document_classifier - INFO - Processing and classifying file: balance-sheet-example-template.png (20561 bytes)
+2025-08-25 15:39:46,062 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 15:39:46,065 - document_classifier - INFO - Cleaned up temporary file: /var/folders/zy/qklbd2f11f94mkvyznxpss8r0000gn/T/tmpkkm8hn6k.png
+2025-08-25 15:39:46,065 - document_classifier - ERROR - API Error processing balance-sheet-example-template.png: No text could be extracted from the document
+2025-08-25 15:39:51,487 - document_classifier - INFO - Processing and classifying file: balance-sheet-example-template.png (20561 bytes)
+2025-08-25 15:39:51,488 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 15:39:52,839 - httpx - INFO - HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
+2025-08-25 15:39:54,024 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:39:56,207 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:39:59,430 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:40:03,646 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:40:09,106 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:40:14,568 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:40:19,992 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:40:25,461 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:40:30,871 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90 "HTTP/1.1 200 OK"
+2025-08-25 15:40:31,230 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/868d75d8-11dd-473f-8304-be3cfe866e90/result/text "HTTP/1.1 200 OK"
+2025-08-25 15:40:31,233 - document_classifier - INFO - Starting document classification...
+2025-08-25 15:40:31,250 - document_classifier - INFO - Before LLM call: 2025-08-25 15:40:31.250222
+2025-08-25 15:40:31,695 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:40:31,697 - document_classifier - INFO - After LLM call: 2025-08-25 15:40:31.697862
+2025-08-25 15:40:31,698 - document_classifier - INFO - Classification result: Finance
+2025-08-25 15:40:32,858 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:40:32,862 - document_classifier - INFO - Extracting data for document type: Finance
+2025-08-25 15:40:47,505 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 15:40:47,509 - document_classifier - INFO - Classification completed successfully: Finance
+2025-08-25 15:40:47,510 - document_classifier - INFO - Cleaned up temporary file: /var/folders/zy/qklbd2f11f94mkvyznxpss8r0000gn/T/tmpx7_uly8g.png

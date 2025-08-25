@@ -1,0 +1,112 @@
+[
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:09:58.993417",
+    "status": "pass",
+    "classification": "Finance",
+    "summary": "Q3 Budget Report shows a 15% revenue increase to $2.5M, operating expenses of $1.8M, and a net profit of $700K.",
+    "processing_time": 6.7991719245910645,
+    "expected": "Finance",
+    "correct": true
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:04.443297",
+    "status": "pass",
+    "classification": "Legal",
+    "summary": "TechCorp Inc. and ServiceProvider LLC have a 24-month Master Services Agreement with a monthly payment of $50,000.",
+    "processing_time": 5.449731111526489,
+    "expected": "Legal",
+    "correct": true
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:10.189776",
+    "status": "pass",
+    "classification": "HR",
+    "summary": "Full-time employees earn 15 days of PTO and 10 days of sick leave each year.",
+    "processing_time": 5.746312856674194,
+    "expected": "HR",
+    "correct": true
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:13.367706",
+    "status": "pass",
+    "classification": "Sales",
+    "summary": "The sales pipeline report indicates 15 qualified leads with a potential revenue of $500K and a 25% close rate.",
+    "processing_time": 3.1777091026306152,
+    "expected": "Sales",
+    "correct": true
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:17.353030",
+    "status": "pass",
+    "classification": "Other",
+    "summary": "Weekend plans and grocery shopping list notes.",
+    "processing_time": 3.9851267337799072,
+    "expected": "Other",
+    "correct": true
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:21.203017",
+    "status": "pass",
+    "classification": "Finance",
+    "summary": "The document is an invoice.",
+    "processing_time": 3.844386100769043,
+    "expected": null,
+    "correct": null
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:24.278999",
+    "status": "pass",
+    "classification": "Other",
+    "summary": "The document consists of meeting notes.",
+    "processing_time": 3.075767755508423,
+    "expected": null,
+    "correct": null
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:33.080490",
+    "status": "pass",
+    "classification": "Legal",
+    "summary": "The document is a repetitive statement emphasizing that it is a contract.",
+    "processing_time": 8.800641775131226,
+    "expected": "Legal",
+    "correct": true
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:37.782182",
+    "status": "pass",
+    "classification": "Legal",
+    "summary": "The document is a contract that includes emojis and special characters.",
+    "processing_time": 4.701556921005249,
+    "expected": "Legal",
+    "correct": true
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:41.125283",
+    "status": "pass",
+    "classification": "Other",
+    "summary": "The document provides information on a specific topic, though details are not specified.",
+    "processing_time": 3.342829942703247,
+    "expected": "Other",
+    "correct": true
+  },
+  {
+    "test_type": "text_classification",
+    "timestamp": "2025-08-25T15:10:45.913562",
+    "status": "pass",
+    "classification": "Legal",
+    "summary": "A legal contract outlining the payment terms for financial services.",
+    "processing_time": 4.787842035293579,
+    "expected": null,
+    "correct": null
+  }
+]

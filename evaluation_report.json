@@ -1,0 +1,309 @@
+{
+  "evaluation_metadata": {
+    "timestamp": "2025-08-25T15:10:45.925057",
+    "total_predictions": 8,
+    "categories": [
+      "Finance",
+      "Legal",
+      "Operations",
+      "HR",
+      "Product",
+      "Engineering / Tech",
+      "Sales",
+      "Marketing / Communications",
+      "Customer Success / Support",
+      "Strategy / Corp Dev",
+      "Compliance / Risk",
+      "Other"
+    ]
+  },
+  "metrics": {
+    "timestamp": "2025-08-25T15:10:45.928220",
+    "total_samples": 8,
+    "accuracy": 1.0,
+    "macro_metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "weighted_metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "per_class_metrics": {
+      "Finance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 1
+      },
+      "Legal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 3
+      },
+      "Operations": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "HR": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 1
+      },
+      "Product": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Engineering / Tech": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Sales": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 1
+      },
+      "Marketing / Communications": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Customer Success / Support": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Strategy / Corp Dev": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Compliance / Risk": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 0
+      },
+      "Other": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 2
+      }
+    },
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "performance": {
+      "avg_processing_time": 5.250385046005249,
+      "median_processing_time": 5.075644016265869,
+      "min_processing_time": 3.1777091026306152,
+      "max_processing_time": 8.800641775131226
+    }
+  },
+  "error_analysis": {
+    "total_errors": 0,
+    "error_rate": 0.0,
+    "error_patterns": {},
+    "detailed_errors": []
+  },
+  "performance_benchmarks": {
+    "processing_time": {
+      "mean": 5.250385046005249,
+      "median": 5.075644016265869,
+      "std": 1.7722016614596001,
+      "p95": 8.100127327442168,
+      "p99": 8.660538885593414,
+      "throughput_per_second": 0.19046222157760584
+    },
+    "accuracy_by_category": {
+      "Finance": 1.0,
+      "Legal": 1.0,
+      "HR": 1.0,
+      "Sales": 1.0,
+      "Other": 1.0
+    }
+  },
+  "classification_report": "                            precision    recall  f1-score   support\n\n                   Finance       1.00      1.00      1.00         1\n                     Legal       1.00      1.00      1.00         3\n                Operations       0.00      0.00      0.00         0\n                        HR       1.00      1.00      1.00         1\n                   Product       0.00      0.00      0.00         0\n        Engineering / Tech       0.00      0.00      0.00         0\n                     Sales       1.00      1.00      1.00         1\nMarketing / Communications       0.00      0.00      0.00         0\nCustomer Success / Support       0.00      0.00      0.00         0\n       Strategy / Corp Dev       0.00      0.00      0.00         0\n         Compliance / Risk       0.00      0.00      0.00         0\n                     Other       1.00      1.00      1.00         2\n\n                  accuracy                           1.00         8\n                 macro avg       0.42      0.42      0.42         8\n              weighted avg       1.00      1.00      1.00         8\n"
+}
