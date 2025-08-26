@@ -21,6 +21,7 @@ from llama_parse import LlamaParse
 from doc_classifier import DocClassifier
 from config import settings
 from logger import logger
+from industry_categories import get_categories_for_industry, get_available_industries
 
 app = FastAPI(
     title="Document Classification API",
@@ -42,7 +43,8 @@ llamaparse_client = LlamaParse(
     api_key=settings.LLAMAPARSE_API_KEY,  # Add this to your config
     result_type="text",
     verbose=True,
-    do_not_cache=True  # Don't cache files on LlamaParse servers (extra privacy)
+    do_not_cache=True,  # Don't cache files on LlamaParse servers (extra privacy)
+    max_pages=10  # Only process first 10 pages for efficiency and cost control
 )
 
 # Supported file types
@@ -192,7 +194,7 @@ async def upload_document(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
 
 @app.post("/upload-and-classify")
-async def upload_and_classify_document(file: UploadFile = File(...)):
+async def upload_and_classify_document(file: UploadFile = File(...), industry: str = "general"):
     """
     Upload a document, extract text with LlamaParse, and classify it
     Complete end-to-end processing with comprehensive error handling
@@ -278,7 +280,7 @@ async def upload_and_classify_document(file: UploadFile = File(...)):
             classify_start = datetime.now()
             
             try:
-                classifier = DocClassifier(extracted_text)
+                classifier = DocClassifier(extracted_text, industry)
                 classification_result = classifier.classify_document()
             except Exception as e:
                 logger.error(f"Classification failed: {str(e)}")
@@ -363,6 +365,7 @@ async def upload_and_classify_document(file: UploadFile = File(...)):
 
 class TextClassificationRequest(BaseModel):
     text: str
+    industry: str = "general"
 
 @app.post("/classify")
 async def classify_text(request: TextClassificationRequest):
@@ -377,7 +380,7 @@ async def classify_text(request: TextClassificationRequest):
         logger.info(f"Classifying text of length: {len(request.text)}")
         
         start_time = datetime.now()
-        classifier = DocClassifier(request.text)
+        classifier = DocClassifier(request.text, request.industry)
         result = classifier.classify_document()
         end_time = datetime.now()
         
@@ -404,35 +407,53 @@ async def classify_text(request: TextClassificationRequest):
         logger.error(f"Error classifying text: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error classifying text: {str(e)}")
 
-@app.get("/categories")
-async def get_categories():
+@app.get("/industries")
+async def get_industries():
     """
-    Get list of available classification categories
+    Get all available industries
     """
-    # Create a dummy classifier to get categories
-    dummy_classifier = DocClassifier("dummy text")
-    
-    return JSONResponse(
-        status_code=200,
-        content={
-            "categories": dummy_classifier.class_labels,
-            "total_categories": len(dummy_classifier.class_labels),
-            "category_descriptions": {
-                "Finance": "budgets, forecasts, invoices, audits",
-                "Legal": "contracts, compliance, IP, regulatory",
-                "Operations": "process docs, logistics, supply chain, facilities",
-                "HR": "hiring, payroll, benefits, employee relations",
-                "Product": "roadmaps, specs, R&D, design",
-                "Engineering / Tech": "code, architecture, infrastructure, IT",
-                "Sales": "pitches, deal flow, pipeline, CRM exports",
-                "Marketing / Communications": "brand, PR, campaigns, content",
-                "Customer Success / Support": "onboarding, training, help docs, feedback",
-                "Strategy / Corp Dev": "M&A, partnerships, investor updates, OKRs",
-                "Compliance / Risk": "audit reports, security, regulatory filings",
-                "Other": "general documents that don't fit other categories"
+    try:
+        industries = get_available_industries()
+        
+        return JSONResponse(
+            status_code=200,
+            content={
+                "status": "success",
+                "industries": industries,
+                "total_industries": len(industries),
+                "timestamp": datetime.now().isoformat()
             }
-        }
-    )
+        )
+        
+    except Exception as e:
+        logger.error(f"Error getting industries: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error retrieving industries: {str(e)}")
+
+@app.get("/categories")
+async def get_categories(industry: str = "general"):
+    """
+    Get all available classification categories with descriptions for a specific industry
+    """
+    try:
+        industry_data = get_categories_for_industry(industry)
+        categories = industry_data["categories"]
+        descriptions = industry_data["descriptions"]
+        
+        return JSONResponse(
+            status_code=200,
+            content={
+                "status": "success",
+                "industry": industry,
+                "categories": categories,
+                "descriptions": descriptions,
+                "total_categories": len(categories),
+                "timestamp": datetime.now().isoformat()
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"Error getting categories for industry {industry}: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error retrieving categories: {str(e)}")
 
 @app.post("/validate")
 async def validate_classification(file: UploadFile = File(...), expected_category: str = None):
@@ -517,7 +538,7 @@ async def test_status():
         # Check if OpenAI is working
         openai_status = "unknown"
         try:
-            test_classifier = DocClassifier("test document")
+            test_classifier = DocClassifier("test document", "general")
             openai_status = "available"
         except:
             openai_status = "error"
@@ -529,7 +550,7 @@ async def test_status():
                 "openai": openai_status
             },
             "api_version": "1.0.0",
-            "categories_count": len(DocClassifier("test").class_labels),
+            "categories_count": len(DocClassifier("test", "general").class_labels),
             "timestamp": datetime.now().isoformat()
         }
         

@@ -3,6 +3,7 @@ from datetime import datetime
 from langchain_openai import ChatOpenAI
 from config import settings
 from logger import logger
+from industry_categories import get_categories_for_industry
 
 class DocClassifier:
     """
@@ -10,15 +11,27 @@ class DocClassifier:
     using llm
     """
 
-    def __init__(self, document_text):
-        self.class_labels = [
-            "Finance", "Legal", "Operations", "HR", "Product", 
-            "Engineering / Tech", "Sales", "Marketing / Communications", 
-            "Customer Success / Support", "Strategy / Corp Dev", "Compliance / Risk", "Other"
-        ]
+    def __init__(self, document_text, industry="general"):
+        self.industry = industry
         
-        # Map each label to specific extraction prompts
-        self.extraction_prompts = {
+        # Get industry-specific categories
+        industry_data = get_categories_for_industry(industry)
+        self.class_labels = industry_data["categories"]
+        self.category_descriptions = industry_data["descriptions"]
+        
+        # Get industry-specific extraction prompts, with fallback to general prompts
+        self.extraction_prompts = industry_data.get("extraction_prompts", {})
+        
+        # Initialize document and LLM
+        self.document_text = document_text
+        self.llm = ChatOpenAI(
+            model="gpt-4o-mini",
+            temperature=0,
+            api_key=settings.OPENAI_API_KEY
+        )
+        
+        # Fallback extraction prompts for general use (when industry doesn't have specific prompts)
+        self.fallback_extraction_prompts = {
             "Finance": """
                 Extract key financial information:
                 - Document type (budget, forecast, invoice, audit report, financial statement)
@@ -180,9 +193,7 @@ class DocClassifier:
                 - Contact information if available
             """
         }
-        
-        self.document_text = document_text
-        self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+
 
     def classify_document(self) -> str:
         """
@@ -198,11 +209,11 @@ class DocClassifier:
         
         # Document classifier prompt
         prompt = f"""
-            You are a document classifier. You are given a complete document below. 
+            You are a document classifier. You are given the first 10 pages of a document below. 
             You must choose the most appropriate label from the following list that best suits the document:
             {labels_str}
 
-            Document:
+            Document (first 10 pages):
             \"\"\"{self.document_text}\"\"\"
 
             Make sure to choose only ONE label and provide ONLY the label as your answer.
@@ -216,9 +227,9 @@ class DocClassifier:
         logger.info(f"Classification result: {response}")
 
         summary_prompt = f"""
-        You are given a complete document below. Give me a summary that is no more than 1 line (255 characters).
+        You are given the first 10 pages of a document below. Give me a summary that is no more than 1 line (255 characters).
 
-        Document:
+        Document (first 10 pages):
             \"\"\"{self.document_text}\"\"\"
         """
 
@@ -237,16 +248,22 @@ class DocClassifier:
     def extract_by_type(self, document_type: str) -> dict:
         """
         Extract specific information based on document classification.
-        This replaces the database prompt lookup system.
+        Uses industry-specific prompts when available, falls back to general prompts.
         """
-        extraction_prompt = self.extraction_prompts.get(document_type, self.extraction_prompts["Other"])
+        # Try industry-specific prompt first
+        extraction_prompt = self.extraction_prompts.get(document_type)
+        
+        # Fall back to general prompts if industry-specific not available
+        if not extraction_prompt:
+            extraction_prompt = self.fallback_extraction_prompts.get(document_type, 
+                self.fallback_extraction_prompts.get("Other", "Extract key information from this document."))
         
         full_prompt = f"""
         Based on the document type "{document_type}", extract the following information:
         
         {extraction_prompt}
         
-        Document Content:
+        Document Content (first 10 pages):
         \"\"\"{self.document_text}\"\"\"
         
         Return the extracted information in a structured format. If any information is not found, indicate "Not specified".
