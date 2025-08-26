@@ -183,3 +183,19 @@
 2025-08-25 15:40:47,505 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-08-25 15:40:47,509 - document_classifier - INFO - Classification completed successfully: Finance
 2025-08-25 15:40:47,510 - document_classifier - INFO - Cleaned up temporary file: /var/folders/zy/qklbd2f11f94mkvyznxpss8r0000gn/T/tmpx7_uly8g.png
+2025-08-25 16:51:04,714 - document_classifier - INFO - Classifying text of length: 35
+2025-08-25 16:51:04,729 - document_classifier - INFO - Before LLM call: 2025-08-25 16:51:04.729524
+2025-08-25 16:51:05,480 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 16:51:05,490 - document_classifier - INFO - After LLM call: 2025-08-25 16:51:05.490178
+2025-08-25 16:51:05,490 - document_classifier - INFO - Classification result: Finance
+2025-08-25 16:51:06,323 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 16:51:06,330 - document_classifier - INFO - Extracting data for document type: Finance
+2025-08-25 16:51:09,828 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 16:59:19,394 - document_classifier - INFO - Classifying text of length: 35
+2025-08-25 16:59:19,438 - document_classifier - INFO - Before LLM call: 2025-08-25 16:59:19.438899
+2025-08-25 16:59:21,818 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 16:59:21,831 - document_classifier - INFO - After LLM call: 2025-08-25 16:59:21.831468
+2025-08-25 16:59:21,831 - document_classifier - INFO - Classification result: Finance
+2025-08-25 16:59:23,203 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 16:59:23,207 - document_classifier - INFO - Extracting data for document type: Finance
+2025-08-25 16:59:25,657 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

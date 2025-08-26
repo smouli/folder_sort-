@@ -10,6 +10,8 @@ from datetime import datetime
 from typing import Optional
 import traceback
 
+# Apply compatibility fix before importing LlamaParse
+import llamaparse_fix
 from llama_parse import LlamaParse
 from doc_classifier import DocClassifier
 from config import settings

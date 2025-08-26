@@ -57,12 +57,17 @@ Classify pre-extracted text.
 
 1. **Install dependencies**:
 ```bash
-# For production (API only)
+# Recommended: Stable versions (no conflicts)
 pip install -r requirements.txt
 
 # For development (includes testing and evaluation tools)
 pip install -r requirements-dev.txt
+
+# Alternative: Latest versions (may have packaging conflicts)
+# pip install -r requirements-latest.txt --force-reinstall
 ```
+
+**Note**: We use `llama-parse==0.3.9` with a compatibility fix for newer pydantic versions. This ensures stable operation without dependency conflicts.
 
 2. **Configure environment variables** by creating a `.env` file:
 ```bash

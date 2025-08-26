@@ -5,7 +5,7 @@ python-multipart==0.0.6
 pydantic==2.11.7
 
 # Document processing and AI
-llama-parse==0.6.62
+llama-parse==0.3.9
 langchain-openai==0.1.20
 
 # Configuration

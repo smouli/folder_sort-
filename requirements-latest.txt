@@ -1,0 +1,19 @@
+# Alternative requirements with latest versions (may have conflicts)
+# Use this if you want to try the latest llama-parse version
+# You may need to install with --force-reinstall
+
+# Core API dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic==2.11.7
+
+# Document processing and AI (latest versions)
+llama-parse==0.6.62
+langchain-openai==0.1.20
+
+# Configuration
+python-dotenv==1.1.1
+
+# Force compatible packaging version
+packaging>=24.0
