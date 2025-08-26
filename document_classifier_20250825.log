@@ -199,3 +199,40 @@
 2025-08-25 16:59:23,203 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-08-25 16:59:23,207 - document_classifier - INFO - Extracting data for document type: Finance
 2025-08-25 16:59:25,657 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 19:06:29,621 - document_classifier - INFO - Processing and classifying file: test_invoice.txt (75 bytes)
+2025-08-25 19:06:29,622 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 19:06:29,622 - document_classifier - ERROR - LlamaParse extraction failed: this event loop is already running.
+2025-08-25 19:06:29,623 - document_classifier - INFO - Cleaned up temporary file: /var/folders/zy/qklbd2f11f94mkvyznxpss8r0000gn/T/tmp_xbj1f3t.txt
+2025-08-25 19:06:29,623 - document_classifier - ERROR - API Error processing test_invoice.txt: Document parsing failed: this event loop is already running.
+2025-08-25 19:09:37,310 - document_classifier - INFO - Processing and classifying file: test_invoice.txt (75 bytes)
+2025-08-25 19:09:37,311 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 19:09:37,311 - document_classifier - ERROR - LlamaParse extraction failed: There is no current event loop in thread 'ThreadPoolExecutor-0_0'.
+2025-08-25 19:09:37,312 - document_classifier - INFO - Cleaned up temporary file: /var/folders/zy/qklbd2f11f94mkvyznxpss8r0000gn/T/tmp_zh_wwg1.txt
+2025-08-25 19:09:37,312 - document_classifier - ERROR - API Error processing test_invoice.txt: Document parsing failed: There is no current event loop in thread 'ThreadPoolExecutor-0_0'.
+2025-08-25 19:10:03,792 - document_classifier - INFO - Processing and classifying file: test_invoice.txt (75 bytes)
+2025-08-25 19:10:03,793 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 19:10:03,794 - document_classifier - ERROR - LlamaParse extraction failed: Currently, only the following file types are supported: ['.pdf', '.xml.doc', '.docx', '.pptx', '.rtf', '.pages', '.key', '.epub']
+Current file type: .txt
+2025-08-25 19:10:03,794 - document_classifier - INFO - Cleaned up temporary file: /var/folders/zy/qklbd2f11f94mkvyznxpss8r0000gn/T/tmpl5tpune7.txt
+2025-08-25 19:10:03,794 - document_classifier - ERROR - API Error processing test_invoice.txt: Document parsing failed: Currently, only the following file types are supported: ['.pdf', '.xml.doc', '.docx', '.pptx', '.rtf', '.pages', '.key', '.epub']
+Current file type: .txt
+2025-08-25 19:10:27,003 - document_classifier - INFO - Processing and classifying file: test_invoice.pdf (1491 bytes)
+2025-08-25 19:10:27,004 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 19:10:28,785 - httpx - INFO - HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
+2025-08-25 19:10:30,375 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/ca21f349-8bb8-4205-b97c-da1ce2007353/result/text "HTTP/1.1 404 Not Found"
+2025-08-25 19:10:31,917 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/ca21f349-8bb8-4205-b97c-da1ce2007353/result/text "HTTP/1.1 200 OK"
+2025-08-25 19:10:31,918 - document_classifier - INFO - Starting document classification...
+2025-08-25 19:10:31,929 - document_classifier - INFO - Before LLM call: 2025-08-25 19:10:31.929123
+2025-08-25 19:10:32,676 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 19:10:32,689 - document_classifier - INFO - After LLM call: 2025-08-25 19:10:32.689781
+2025-08-25 19:10:32,690 - document_classifier - INFO - Classification result: Finance
+2025-08-25 19:10:34,607 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 19:10:34,614 - document_classifier - INFO - Extracting data for document type: Finance
+2025-08-25 19:10:37,494 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-25 19:10:37,498 - document_classifier - INFO - Classification completed successfully: Finance
+2025-08-25 19:10:37,499 - document_classifier - INFO - Cleaned up temporary file: /var/folders/zy/qklbd2f11f94mkvyznxpss8r0000gn/T/tmp95el2ymj.pdf
+2025-08-25 19:10:55,565 - document_classifier - INFO - Processing file: test_invoice.pdf, size: 1491 bytes, hash: 47d561f9bd35c724a345bfc0cb463057
+2025-08-25 19:10:55,566 - document_classifier - INFO - Starting LlamaParse extraction...
+2025-08-25 19:10:57,240 - httpx - INFO - HTTP Request: POST https://api.cloud.llamaindex.ai/api/parsing/upload "HTTP/1.1 200 OK"
+2025-08-25 19:10:58,775 - httpx - INFO - HTTP Request: GET https://api.cloud.llamaindex.ai/api/parsing/job/5c058f41-6db8-4418-8bcb-06a6b128a542/result/text "HTTP/1.1 200 OK"
+2025-08-25 19:10:58,776 - document_classifier - INFO - LlamaParse completed in 3.21 seconds

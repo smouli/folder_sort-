@@ -9,9 +9,14 @@ import hashlib
 from datetime import datetime
 from typing import Optional
 import traceback
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
 
 # Apply compatibility fix before importing LlamaParse
 import llamaparse_fix
+# Fix event loop conflict for LlamaParse in FastAPI
+import nest_asyncio
+nest_asyncio.apply()
 from llama_parse import LlamaParse
 from doc_classifier import DocClassifier
 from config import settings
@@ -80,6 +85,23 @@ def safe_cleanup(file_path: str):
     except Exception as e:
         logger.warning(f"Failed to cleanup file {file_path}: {str(e)}")
 
+# Helper function to run LlamaParse in thread pool to avoid event loop conflicts
+async def run_llamaparse_async(file_path: str):
+    """Run LlamaParse in a thread pool to avoid event loop conflicts"""
+    def run_llamaparse():
+        # Create a new event loop for this thread
+        import asyncio
+        try:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            return llamaparse_client.load_data(file_path)
+        finally:
+            loop.close()
+    
+    loop = asyncio.get_event_loop()
+    with ThreadPoolExecutor() as executor:
+        return await loop.run_in_executor(executor, run_llamaparse)
+
 class APIError(Exception):
     """Custom API error with structured details"""
     def __init__(self, message: str, error_type: str = "general", details: dict = None):
@@ -133,7 +155,7 @@ async def upload_document(file: UploadFile = File(...)):
             logger.info("Starting LlamaParse extraction...")
             start_time = datetime.now()
             
-            documents = llamaparse_client.load_data(temp_file_path)
+            documents = await run_llamaparse_async(temp_file_path)
             extracted_text = documents[0].text if documents else ""
             
             end_time = datetime.now()
@@ -227,7 +249,7 @@ async def upload_and_classify_document(file: UploadFile = File(...)):
             parse_start = datetime.now()
             
             try:
-                documents = llamaparse_client.load_data(temp_file_path)
+                documents = await run_llamaparse_async(temp_file_path)
                 extracted_text = documents[0].text if documents and len(documents) > 0 else ""
             except Exception as e:
                 logger.error(f"LlamaParse extraction failed: {str(e)}")
@@ -435,7 +457,7 @@ async def validate_classification(file: UploadFile = File(...), expected_categor
                     temp_file.write(file_content)
                     temp_file_path = temp_file.name
                 
-                documents = llamaparse_client.load_data(temp_file_path)
+                documents = await run_llamaparse_async(temp_file_path)
                 extracted_text = documents[0].text if documents else ""
                 
                 classifier = DocClassifier(extracted_text)
